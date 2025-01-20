@@ -111,7 +111,204 @@ body {
   transform: translateY(-2px);
   box-shadow: 0 0 30px rgba(0, 255, 245, 0.5);
 }
+/* ... (previous styles remain the same) ... */
 
+/* Personal Contact Section */
+
+.personal-contact-section {
+  padding: 2rem 1rem 1rem;
+  background-color: var(--cyber-black);
+  position: relative;
+}
+
+.personal-contact-section::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 1px;
+  background: linear-gradient(90deg, transparent, var(--neon-blue), transparent);
+}
+
+.contact-container {
+  max-width: 64rem;
+  margin: 0 auto;
+}
+
+.contact-cards {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 2rem;
+  margin-top: 3rem;
+  margin-bottom: 1rem; 
+}
+
+.contact-card {
+  background: rgba(10, 77, 163, 0.2);
+  border: 1px solid rgba(0, 255, 245, 0.1);
+  border-radius: 1rem;
+  padding: 1.5rem;
+  text-align: center;
+  transition: all 0.3s ease;
+  position: relative;
+  overflow: hidden;
+}
+
+.contact-card::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 2px;
+  background: linear-gradient(90deg, transparent, var(--neon-blue), transparent);
+  transform: translateX(-100%);
+  transition: transform 0.5s ease;
+}
+
+.contact-card:hover::before {
+  transform: translateX(100%);
+}
+
+.contact-card:hover {
+  transform: translateY(-5px);
+  border-color: var(--neon-blue);
+  box-shadow: 0 0 20px rgba(0, 255, 245, 0.2);
+}
+
+.contact-icon {
+  width: 2rem;
+  height: 2rem;
+  color: var(--neon-blue);
+  margin-bottom: 0.5rem;
+  filter: drop-shadow(0 0 5px var(--neon-blue));
+}
+
+.contact-card h3 {
+  color: var(--neon-blue);
+  font-size: 1.1rem;
+  margin-bottom: 0.2rem;
+}
+
+.contact-card p,
+.contact-card a {
+  color: var(--gray-100);
+  font-size: 1.1rem;
+  text-decoration: none;
+  transition: color 0.3s ease;
+}
+
+.contact-card a:hover {
+  color: var(--neon-blue);
+}
+
+@media (max-width: 768px) {
+  .contact-cards {
+    grid-template-columns: 1fr;
+  }
+  
+  .contact-card {
+    padding: 1.5rem;
+  }
+}
+
+/* ... (rest of the styles remain the same) ... */
+/* Previous CSS remains the same... */
+
+/* About Section */
+.about-section {
+  padding: 5rem 1rem;
+  background-color: var(--dark-blue);
+  position: relative;
+}
+
+.about-container {
+  max-width: 64rem;
+  margin: 0 auto;
+}
+
+.about-content {
+  display: flex;
+  flex-direction: column;
+  gap: 3rem;
+}
+
+.about-text {
+  background-color: rgba(10, 77, 163, 0.2);
+  border-radius: 1rem;
+  padding: 2rem;
+  border: 1px solid rgba(0, 255, 245, 0.1);
+  box-shadow: 0 0 20px rgba(0, 255, 245, 0.05);
+}
+
+.about-text p {
+  color: var(--gray-100);
+  font-size: 1.1rem;
+  line-height: 1.7;
+  margin-bottom: 1.5rem;
+}
+
+.about-text p:last-child {
+  margin-bottom: 0;
+}
+
+.portfolio-links {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 1rem;
+  width: 100%;
+}
+
+.portfolio-btn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.75rem;
+  background-color: rgba(10, 77, 163, 0.2);
+  color: var(--neon-blue);
+  padding: 1rem;
+  border-radius: 0.75rem;
+  border: 1px solid rgba(0, 255, 245, 0.1);
+  cursor: pointer;
+  font-size: 1rem;
+  transition: all 0.3s ease;
+  text-decoration: none;
+  text-align: center;
+}
+
+.portfolio-btn:hover {
+  background-color: rgba(0, 255, 245, 0.1);
+  border-color: var(--neon-blue);
+  transform: translateY(-3px);
+  box-shadow: 0 0 20px rgba(0, 255, 245, 0.2);
+}
+
+.portfolio-btn .btn-icon {
+  width: 1.5rem;
+  height: 1.5rem;
+  filter: drop-shadow(0 0 3px var(--neon-blue));
+}
+
+.portfolio-btn span {
+  font-weight: 500;
+}
+
+@media (max-width: 768px) {
+  .portfolio-links {
+    grid-template-columns: 1fr;
+  }
+  
+  .about-text {
+    padding: 1.5rem;
+  }
+  
+  .about-text p {
+    font-size: 1rem;
+  }
+}
+
+/* Rest of the CSS remains the same... */
 /* Projects Section */
 .projects-section {
   padding: 6rem 1rem;

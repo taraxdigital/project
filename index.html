@@ -25,6 +25,71 @@
         </button>
       </div>
     </header>
+    <div class="min-h-screen">
+      <!-- ... (previous sections remain the same until contact section) ... -->
+  
+      <!-- Personal Contact Section -->
+      <section class="personal-contact-section">
+        <div class="contact-container">
+          <h2 class="section-title">Contact Information</h2>
+          <div class="contact-cards">
+            <div class="contact-card">
+              <i data-lucide="phone" class="contact-icon"></i>
+              <h3>Phone</h3>
+              <p>+34 675396071</p>
+            </div>
+            <div class="contact-card">
+              <i data-lucide="mail" class="contact-icon"></i>
+              <h3>Email</h3>
+              <p>danielariasperandres@gmail.com</p>
+            </div>
+            <div class="contact-card">
+              <i data-lucide="linkedin" class="contact-icon"></i>
+              <h3>LinkedIn</h3>
+              <a href="https://www.linkedin.com/in/daniel-arias-perandr%C3%A9s/?originalSubdomain=es" target="_blank">linkedin.com/in/yourprofile</a>
+            </div>
+          </div>
+        </div>
+      </section>
+  
+      <!-- ... (rest of the sections remain the same) ... -->
+    </div>
+  
+      <!-- About Me Section -->
+      <section class="about-section">
+        <div class="about-container">
+          <h2 class="section-title">About Me</h2>
+          <div class="about-content">
+            <div class="about-text">
+              <p>As a passionate game designer, I blend creativity with technical expertise to craft memorable gaming experiences. With years of experience in both indie and AAA game development, I specialize in creating engaging gameplay mechanics and immersive worlds that players love to explore.</p>
+              <p>My approach combines innovative design thinking with player-centric development, ensuring that each project delivers both entertainment and meaningful engagement.</p>
+            </div>
+            <div class="portfolio-links">
+              <a href="https://www.artstation.com/axicblk" class="portfolio-btn" target="_blank">
+                <i data-lucide="palette" class="btn-icon"></i>
+                <span>ArtStation</span>
+              </a>
+              <a href="https://www.redbubble.com/es/people/axicdant3/shop?anchor=profile&asc=u" class="portfolio-btn" target="_blank">
+                <i data-lucide="shopping-bag" class="btn-icon"></i>
+                <span>RedBubble</span>
+              </a>
+              <a href="https://theh3llwalk3r.wixsite.com/danielariasperandres" class="portfolio-btn" target="_blank">
+                <i data-lucide="globe" class="btn-icon"></i>
+                <span>Portfolio</span>
+              </a>
+              <a href="https://ko-fi.com/axicblk" class="portfolio-btn" target="_blank">
+                <i data-lucide="coffee" class="btn-icon"></i>
+                <span>Ko-fi</span>
+              </a>
+              <a href="https://www.amazon.es/dp/B0C6L43SDD?ref_=cm_sw_r_cp_ud_dp_T2P2F91HZZP84KQWS6F9" class="portfolio-btn" target="_blank">
+                <i data-lucide="shopping-cart" class="btn-icon"></i>
+                <span>Amazon Shop</span>
+              </a>
+            </div>
+          </div>
+        </div>
+      </section>
+  
 
     <!-- Projects Section -->
     <section class="projects-section">
@@ -107,5 +172,31 @@
   </div>
 
   <script src="main.js"></script>
+  <script>
+    // Initialize Lucide icons
+    lucide.createIcons();
+
+    // Render projects
+    const projectsContainer = document.getElementById('projectsContainer');
+    if (projectsContainer) {
+      projectsContainer.innerHTML = projects.map((project, index) => `
+        <div class="project-card" data-index="${index}">
+          <div class="project-content">
+            <img src="${project.image}" alt="${project.title}" class="project-image">
+            <div class="project-info">
+              <h3 class="project-title">${project.title}</h3>
+              <p class="project-role">${project.role}</p>
+              <p class="project-description">${project.description}</p>
+              <div class="tech-tags">
+                ${project.tech.map(tech => `
+                  <span class="tech-tag">${tech}</span>
+                `).join('')}
+              </div>
+            </div>
+          </div>
+        </div>
+      `).join('');
+    }
+  </script>
 </body>
 </html>

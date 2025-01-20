@@ -64,6 +64,7 @@ function renderProjects() {
   `).join('');
 }
 
+
 // Render skills
 function renderSkills() {
   const skillsContainer = document.getElementById('skillsContainer');
